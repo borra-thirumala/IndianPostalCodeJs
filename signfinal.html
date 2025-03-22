@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        @media screen and (max-width: 1000px) {
+            body {
+                margin: 0;
+                font-family: 'Arial', sans-serif;
+                
+                background: #e65a00;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+
+            .container-fluid {
+                width: 100%;
+                max-width: 380px;
+                background-color: #e0dfcd;
+                padding: 2rem;
+                border-radius: 15px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+                text-align: center;
+            }
+
+            h1 {
+                color: #e65a00;
+                font-weight: bold;
+                font-size: 32px;
+            }
+
+            .form-control {
+                border-radius: 10px;
+                padding: 10px;
+                border: 2px solid #e65a00;
+                color: #333;
+                transition: 0.3s;
+            }
+
+            .form-control::placeholder {
+                color: #999;
+            }
+
+            .form-control:focus {
+                border-color: #ff4444;
+                box-shadow: 0 0 10px #e65a00;
+            }
+
+            .btn-primary, .btn-secondary {
+                border-radius: 12px;
+                padding: 10px;
+                font-size: 1rem;
+                width: 100%;
+                font-weight: bold;
+                transition: 0.3s;
+                margin-top: 10px;
+            }
+
+            .btn-primary {
+                background-color: #e65a00;
+                border: none;
+                color: #fff;
+            }
+
+            .btn-primary:hover {
+                background-color: #e65a00;
+                box-shadow: 0 4px 10px rgba(255, 0, 0, 0.4);
+            }
+
+            .btn-secondary {
+                background-color: #f8f9fa;
+                color: #e65a00;
+                border: 2px solid #e65a00;
+            }
+
+            .btn-secondary:hover {
+                background-color: #e65a00;
+                color: #fff;
+            }
+
+            #lap {
+                display: none;
+            }
+        }
+
+        @media screen and (min-width: 1024px) and (max-width: 2440px) {
+            body {
+                margin: 0;
+                font-family: 'Arial', sans-serif;
+                background-color: #f8f9fa;
+            }
+
+            .container-fluid {
+                display: flex;
+                height: 100vh;
+                background-color: #ff6a00;
+            }
+
+            .left-panel {
+                flex: 1;
+                background: linear-gradient(135deg, #ff6a00, #ff8500);
+                background-color: #e0dfcd;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 2rem;
+                text-align: center;
+            }
+
+            .left-panel h1 {
+                font-size: 2.5rem;
+                font-weight: bold;
+                margin-bottom: 1rem;
+            }
+
+            .left-panel p {
+                font-size: 1.2rem;
+                margin-bottom: 2rem;
+            }
+
+            .left-panel img {
+                max-width: 80%;
+                height: auto;
+                border-radius: 20px;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+                margin-top: 1.5rem;
+            }
+
+            .right-panel {
+                flex: 1;
+                 background-color: #e0dfcd;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                padding: 2rem;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            }
+
+            .right-panel h2 {
+                font-size: 2rem;
+                font-weight: bold;
+                margin-bottom: 1rem;
+            }
+
+            .form-control {
+                border-radius: 20px;
+                padding: 10px 20px;
+            }
+
+            .btn-primary {
+                border-radius: 50px;
+                padding: 10px 30px;
+                background-color: #ff6a00;
+                border: none;
+                font-size: 1rem;
+                margin-bottom: 10px;
+            }
+
+            .btn-primary:hover {
+                background-color: #e65a00;
+            }
+
+            .signup-text {
+                margin-top: 1rem;
+                font-size: 0.9rem;
+            }
+
+            .guestLoginBtn-text{
+                margin-top: 10rem;
+                font-size: 0.9rem;
+                
+
+
+            }
+
+            .signup-text a {
+                color: #ff6a00;
+                text-decoration: none;
+            }
+
+            .guestLoginBtn-text a{
+                color: #ff6a00;
+                text-decoration: none;
+
+            }
+
+            .signup-text a:hover {
+                text-decoration: underline;
+            }
+
+            .guestLoginBtn a:hover{
+                text-decoration: underline;
+            }
+
+            #lap {
+                height: 300px;
+                width: 250px;
+            }
+
+            #mob {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="left-panel">
+            <h1>Welcome to Sign Up</h1>
+            <p>Indian Postal Code Web App</p>
+            <img src="assets/file-S3RCt9Qv9F5H3JkhmGK6uE[1].jpg" height="300px" width="250px" alt="Illustration" id="lap">
+        </div>
+
+        <div class="right-panel">
+            <h2 id="form-title"  >Sign Up</h2>
+            <p id="form-subtitle">Create a new account</p>
+
+            <form id="signup-form">
+                <div class="mb-3">
+                    <input type="text" id="signupName" class="form-control" placeholder="Full Name" required>
+                </div>
+                <div class="mb-3">
+                    <input type="email" id="signupEmail" class="form-control" placeholder="Email address" required>
+                </div>
+                <div class="mb-3">
+                    <input type="password" id="signupPassword" class="form-control" placeholder="Password" required>
+                </div>
+                <div class="mb-3">
+                    <input type="password" id="signupConfirmPassword" class="form-control" placeholder="Confirm Password" required>
+                </div>
+                <button type="button" id="signupBtn" class="btn btn-primary w-100">Sign Up</button>
+                <button type="button" id="guestLoginBtn" class="btn btn-primary w-100">Guest Login</button>
+                <p class="mt-3">Already have an account? <a href="loginfinal.html">Login</a></p>
+               
+                <img src="assets/file-S3RCt9Qv9F5H3JkhmGK6uE[1].jpg" height="150px" width="150px" alt="Illustration" id="mob">
+            </form>
+        </div>
+    </div>
+
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+        import { getAuth, createUserWithEmailAndPassword, signInAnonymously } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyArdDWGyv39ZArM9uZHTGPGpiBhsmzLat0",
+            authDomain: "rlogin-53810.firebaseapp.com",
+            projectId: "rlogin-53810",
+            storageBucket: "rlogin-53810.appspot.com",
+            messagingSenderId: "1006735998243",
+            appId: "1:1006735998243:web:77a27bb445c1c724eba096"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const auth = getAuth(app);
+
+        document.getElementById("signupBtn").addEventListener("click", () => {
+            const name = document.getElementById("signupName").value;
+            const email = document.getElementById("signupEmail").value;
+            const password = document.getElementById("signupPassword").value;
+            const confirmPassword = document.getElementById("signupConfirmPassword").value;
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match. Please try again.");
+                return;
+            }
+
+            createUserWithEmailAndPassword(auth, email, password)
+                .then(() => {
+                    alert(`Welcome ${name}, your account has been created successfully!`);
+                    window.location.href = "postalcode.html";
+                })
+                .catch((error) => {
+                    alert(`Signup failed: ${error.message}`);
+                });
+        });
+
+        document.getElementById("guestLoginBtn").addEventListener("click", () => {
+            signInAnonymously(auth)
+                .then(() => {
+                    alert("Guest login successful!");
+                    window.location.href = "postalcode.html"; 
+                })
+                .catch((error) => {
+                    alert(`Guest login failed: ${error.message}`);
+                });
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
